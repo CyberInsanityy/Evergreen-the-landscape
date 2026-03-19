@@ -22,7 +22,6 @@
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#top" aria-label="Evergreen Edge home">
-        <!-- ✅ Masked wordmark fixes “condensed” padded PNG -->
         <span class="wordmark-mask wordmark-mask--header">
           <img class="wordmark-img" src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="Evergreen Edge">
         </span>
@@ -55,15 +54,14 @@
   </header>
 
   <main id="main">
+    <!-- HERO -->
     <section class="hero" aria-label="Hero">
-      <!-- watermark stays subtle -->
       <div class="hero-watermark" aria-hidden="true">
         <img src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="">
       </div>
 
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <!-- ✅ Hero masked wordmark (bigger but controlled) -->
           <span class="wordmark-mask wordmark-mask--hero">
             <img class="wordmark-img" src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="Evergreen Edge">
           </span>
@@ -87,9 +85,9 @@
           </div>
 
           <div class="trust-row" role="list" aria-label="Trust signals">
-            <div class="trust-pill" role="listitem">★ <strong>4.9</strong> avg rating</div>
-            <div class="trust-pill" role="listitem">🛡 <strong>Licensed</strong> & insured</div>
-            <div class="trust-pill" role="listitem">⏱ <strong>24–48h</strong> response</div>
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">★</span><strong>4.9</strong> avg rating</div>
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">🛡</span><strong>Licensed</strong> & insured</div>
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">⏱</span><strong>24–48h</strong> response</div>
           </div>
 
           <div class="hero-metrics" aria-label="Key metrics">
@@ -116,11 +114,368 @@
           </div>
         </div>
       </div>
+
+      <div class="hero-bottom container reveal">
+        <div class="value-strip" aria-label="Value proposition highlights">
+          <div class="value-item"><h3>Sharper edges</h3><p>Hard lines finished clean—walks, drives, curbs.</p></div>
+          <div class="value-item"><h3>Spotless blow-off</h3><p>No clippings on concrete. Clean exit every visit.</p></div>
+          <div class="value-item"><h3>Fast estimates</h3><p>Most quotes returned within 24–48 hours.</p></div>
+        </div>
+      </div>
+
+      <div class="hero-noise" aria-hidden="true"></div>
     </section>
 
-    <!-- Rest of your sections stay the same as your current HTML.
-         Only change needed was logo -> masked wordmark. -->
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-label="Services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Services</h2>
+          <p class="section-lede">Tap a service—details and photo update instantly.</p>
+        </div>
 
+        <div class="services-wrap reveal">
+          <div class="tabs" role="tablist" aria-label="Services tabs">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tabPanel" data-tab="mow">Mow + Edge</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabPanel" data-tab="trim">Trim + Detail</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabPanel" data-tab="cleanup">Cleanups</button>
+          </div>
+
+          <div class="tab-panel" id="tabPanel" role="tabpanel" tabindex="0" aria-live="polite">
+            <div class="tab-content">
+              <h3 class="tab-title" data-tab-title>Mow + Edge</h3>
+              <p class="tab-copy" data-tab-copy>Premium mowing with crisp edging and a clean blow-off—built for curb appeal.</p>
+
+              <ul class="checklist" data-tab-list>
+                <li>Even mow height + clean passes</li>
+                <li>Edges on sidewalks/driveways/curbs</li>
+                <li>Trim around obstacles</li>
+                <li>Final blow-off (clean exit)</li>
+              </ul>
+
+              <div class="tab-cta">
+                <a class="btn btn-primary js-form-link" href="#">
+                  Book a Quote <span class="btn-shine" aria-hidden="true"></span>
+                </a>
+                <div class="mini-proof" aria-label="Mini proof">
+                  <span class="mini-pill">Clean exit</span>
+                  <span class="mini-pill">Licensed</span>
+                  <span class="mini-pill">Fast response</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tab-media">
+              <div class="tab-image-frame">
+                <img data-tab-image src="./IMG_0022.jpeg" alt="Service image" loading="lazy" />
+                <div class="tab-image-overlay" aria-hidden="true"></div>
+              </div>
+
+              <div class="tab-stats" aria-label="Service stats">
+                <div class="stat"><div class="stat-num">48h</div><div class="stat-label">estimate goal</div></div>
+                <div class="stat"><div class="stat-num">✓</div><div class="stat-label">checklist</div></div>
+                <div class="stat"><div class="stat-num">🧹</div><div class="stat-label">blow-off</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="services-grid reveal" aria-label="Service highlights">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Clean lines</h3>
+            <p>Consistent cut height + straight passes that read “pro” instantly.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Edges that pop</h3>
+            <p>Hard edges are curb appeal. We treat them like the main event.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Detail trimming</h3>
+            <p>Fence lines, corners, obstacles—tight and clean finishing work.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Cleanups</h3>
+            <p>Seasonal resets for leaf pickup, debris, and a fresh look.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section class="section section--alt" id="work" aria-label="Work gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Work</h2>
+          <p class="section-lede">A quick look at the finish standard.</p>
+        </div>
+
+        <div class="masonry reveal" aria-label="Gallery grid">
+          <figure class="masonry-item">
+            <img src="./IMG_0024.jpeg" alt="Close-up mower cutting grass" loading="lazy" />
+            <figcaption>Fresh cut finish</figcaption>
+          </figure>
+
+          <figure class="masonry-item masonry-item--tall">
+            <img src="./IMG_0022.jpeg" alt="Mowing service on a yard" loading="lazy" />
+            <figcaption>Clean lines</figcaption>
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="./IMG_0023.jpeg" alt="Detail trimming and lawn service" loading="lazy" />
+            <figcaption>Detail finish</figcaption>
+          </figure>
+
+          <div class="proof-card">
+            <h3>Finish checklist</h3>
+            <ul class="checklist">
+              <li>Even mow height</li>
+              <li>Edges on hard lines</li>
+              <li>Trim around obstacles</li>
+              <li>Blow-off + clean exit</li>
+            </ul>
+            <a class="btn btn-ghost js-form-link" href="#" aria-label="Book via form">Book a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing" aria-label="Pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Pricing</h2>
+          <p class="section-lede">One-time visits. Final price depends on lot size and access.</p>
+        </div>
+
+        <div class="pricing-grid reveal" aria-label="Pricing plans">
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Starter Cut</h3>
+              <p>Clean baseline service for smaller lawns.</p>
+            </div>
+            <div class="price">$129</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow + trim pass</li>
+              <li>Edge hard lines</li>
+              <li>Blow-off surfaces</li>
+              <li>Quick detail check</li>
+            </ul>
+            <a class="btn btn-ghost full js-form-link" href="#" data-plan="Starter Cut">Select Starter</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-badge" aria-hidden="true">Best Value</div>
+            <div class="price-top">
+              <h3>Signature Edge</h3>
+              <p>Full detail finish: lines, edging, trimming, blow-off.</p>
+            </div>
+            <div class="price">$199</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow with clean lines</li>
+              <li>Full edging (walk/drive/curb)</li>
+              <li>Detail trimming</li>
+              <li>Full blow-off + tidy finish</li>
+            </ul>
+            <a class="btn btn-primary full js-form-link" href="#" data-plan="Signature Edge">
+              Select Signature <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Commercial Clean</h3>
+              <p>For storefronts/offices that need a sharp first impression.</p>
+            </div>
+            <div class="price">$299</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow + trim perimeter</li>
+              <li>Edge entry lines</li>
+              <li>Blow-off lots/walks</li>
+              <li>Optional photo check-in</li>
+            </ul>
+            <a class="btn btn-ghost full js-form-link" href="#" data-plan="Commercial Clean">Select Commercial</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section class="section" id="areas" aria-label="Service areas">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Service Areas</h2>
+          <p class="section-lede">Routes across the metro. If you’re nearby, we’ll confirm quickly.</p>
+        </div>
+
+        <div class="areas-grid reveal">
+          <div class="areas-card">
+            <h3>Primary zones</h3>
+            <ul class="areas-list">
+              <li>Northside neighborhoods</li>
+              <li>Downtown / midtown corridors</li>
+              <li>West-end residential</li>
+              <li>South lake / park districts</li>
+            </ul>
+          </div>
+
+          <div class="areas-card">
+            <h3>Nearby cities</h3>
+            <ul class="areas-list">
+              <li>Riverview</li>
+              <li>Oak Hollow</li>
+              <li>Stonebridge</li>
+              <li>Maple Heights</li>
+            </ul>
+          </div>
+
+          <div class="areas-card areas-card--accent">
+            <h3>Not sure?</h3>
+            <p>Send your address and we’ll confirm availability and timing.</p>
+            <a class="btn btn-primary js-form-link" href="#">
+              Check Availability <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt" id="reviews" aria-label="Testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Reviews</h2>
+          <p class="section-lede">What people notice first: the edges and the clean exit.</p>
+        </div>
+
+        <div class="slider reveal" aria-label="Testimonials slider">
+          <div class="slider-track" id="testimonialTrack" aria-live="polite">
+            <article class="testimonial is-active">
+              <p class="quote">“The edging is the difference. Sidewalks look brand new and they never leave clippings behind.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">A</span>
+                <div><div class="name">Alyssa M.</div><div class="meta">Homeowner</div></div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="quote">“Lines are straight, trimming is tight, and the blow-off is spotless. Looks expensive.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">J</span>
+                <div><div class="name">Jordan K.</div><div class="meta">Homeowner</div></div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="quote">“Storefront looked sharp the same day. Entry clean, no mess left behind.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">S</span>
+                <div><div class="name">S. Patel</div><div class="meta">Commercial</div></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="slider-controls">
+            <button class="icon-btn" type="button" id="testPrev" aria-label="Previous testimonial">←</button>
+            <div class="dots" role="tablist" aria-label="Testimonial dots">
+              <button class="dot-btn is-active" type="button" aria-label="Go to testimonial 1" data-index="0"></button>
+              <button class="dot-btn" type="button" aria-label="Go to testimonial 2" data-index="1"></button>
+              <button class="dot-btn" type="button" aria-label="Go to testimonial 3" data-index="2"></button>
+            </div>
+            <button class="icon-btn" type="button" id="testNext" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-lede">Clear answers. No surprises.</p>
+        </div>
+
+        <div class="faq reveal" role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              Do you offer weekly/biweekly service?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Yes. Request it on the form and we’ll confirm route availability.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              What does “clean exit” mean?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>We blow off sidewalks, driveways, patios, and curb edges so clippings aren’t left on concrete.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              How fast do you send estimates?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Most estimates are returned within 24–48 hours depending on route volume and scope.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              Are you licensed and insured?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Yes—licensed and insured, with careful site practices on every property.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact" aria-label="Book lawn care quote">
+      <div class="container cta-grid reveal">
+        <div class="cta-card">
+          <h2 class="cta-title">Ready for a lawn that looks finished?</h2>
+          <p class="cta-copy">Book in under a minute. We’ll confirm scope and timing—then send a clear estimate.</p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg js-form-link" href="#">
+              Book Now <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+
+        <aside class="cta-aside" aria-label="Quick facts">
+          <div class="aside-card">
+            <h3>What happens next</h3>
+            <ol class="steps">
+              <li>Submit the form (address + needs)</li>
+              <li>We confirm timing + scope</li>
+              <li>You get estimate + schedule options</li>
+            </ol>
+          </div>
+
+          <div class="aside-card aside-card--dark">
+            <h3>Included in every visit</h3>
+            <ul class="checklist">
+              <li>Edging on hard lines</li>
+              <li>Detail trimming</li>
+              <li>Full blow-off + tidy finish</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer class="footer" aria-label="Footer">
       <div class="container footer-inner">
         <span class="wordmark-mask wordmark-mask--footer">
@@ -131,6 +486,7 @@
           Book Quote <span class="btn-shine" aria-hidden="true"></span>
         </a>
       </div>
+
       <div class="container footer-bottom">
         <p>© <span id="year"></span> Evergreen Edge Lawn Care. All rights reserved.</p>
       </div>
