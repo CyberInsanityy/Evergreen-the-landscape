@@ -1,4 +1,5 @@
-/* style.css — Evergreen Edge (premium, logo-first, NOT overpowering) */
+/* style.css — Evergreen Edge (premium) */
+/* Key fix: wordmark PNGs are usually padded (square). We "zoom" them with transform scale to feel like real typography. */
 
 :root{
   --bg:#06110c;
@@ -88,28 +89,35 @@ a{ color:inherit; }
   opacity:.75;
 }
 
-/* Logo-as-wordmark (header) — controlled, never huge */
+/* ✅ Wordmark fix: treat logo like a wordmark, not a square image */
 .brand{ display:flex; align-items:center; text-decoration:none; }
 .brand-wordmark{
-  height: clamp(30px, 3.2vw, 44px);
-  width:auto;
-  opacity:.94;
+  /* only set height, never width/height together */
+  height: clamp(30px, 3.2vw, 46px);
+  width: auto;
+  max-width: 240px;
+
+  /* the REAL fix: zoom into padded PNG so it doesn't look condensed */
+  transform: scale(1.22);
+  transform-origin: left center;
+
+  opacity:.96;
   filter:
-    saturate(1.06)
-    contrast(1.06)
-    brightness(1.05)
-    drop-shadow(0 18px 26px rgba(0,0,0,.28));
+    saturate(1.07)
+    contrast(1.07)
+    brightness(1.06)
+    drop-shadow(0 18px 28px rgba(0,0,0,.30));
   mix-blend-mode: screen;
   transition: transform .18s ease, opacity .18s ease, filter .18s ease;
 }
 .brand:hover .brand-wordmark{
-  transform: translateY(-1px);
-  opacity: .98;
+  transform: translateY(-1px) scale(1.26);
+  opacity: 1;
   filter:
-    saturate(1.08)
-    contrast(1.08)
-    brightness(1.06)
-    drop-shadow(0 26px 40px rgba(0,0,0,.32));
+    saturate(1.10)
+    contrast(1.10)
+    brightness(1.08)
+    drop-shadow(0 28px 46px rgba(0,0,0,.34));
 }
 @supports not (mix-blend-mode: screen){
   .brand-wordmark{ mix-blend-mode: normal; }
@@ -241,15 +249,15 @@ a{ color:inherit; }
   pointer-events:none;
 }
 
-/* Watermark (supporting, never competing) */
+/* Watermark */
 .hero-watermark{
   position:absolute;
   right:-220px;
   top:-40px;
   width: 680px;
-  opacity:.022;
+  opacity:.020;
   transform: rotate(10deg);
-  filter: blur(.4px);
+  filter: blur(.45px);
   pointer-events:none;
   z-index:0;
 }
@@ -264,24 +272,21 @@ a{ color:inherit; }
   align-items:center;
 }
 
-.hero-copy{ position:relative; }
-
-.hero-lockup{
-  display:grid;
-  gap: 10px;
-}
-
-/* Hero wordmark (THIS is what was covering the page) */
+/* ✅ Hero wordmark fix: cap + zoom */
 .hero-wordmark{
-  width: min(520px, 100%);
-  max-height: 150px;
-  height:auto;
+  width: min(560px, 100%);
+  height: auto;
+  max-height: 155px;
+
+  transform: scale(1.18);
+  transform-origin: left center;
+
   opacity: .82;
-  margin: 0 0 8px 0;
+  margin: 0 0 10px 0;
   filter:
-    saturate(1.03)
-    contrast(1.03)
-    brightness(1.03)
+    saturate(1.05)
+    contrast(1.05)
+    brightness(1.05)
     drop-shadow(0 30px 70px rgba(0,0,0,.36));
   mix-blend-mode: screen;
 }
@@ -318,7 +323,6 @@ a{ color:inherit; }
   color: var(--sand);
   text-shadow: 0 22px 90px rgba(210,155,107,.18);
 }
-
 .hero-subtitle{
   margin: 0 0 18px;
   max-width: 58ch;
@@ -326,19 +330,11 @@ a{ color:inherit; }
   font-size:16px;
   line-height:1.65;
 }
-
 .hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin: 12px 0 16px; }
 
-.trust-row{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin: 10px 0 18px;
-}
+.trust-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 18px; }
 .trust-pill{
-  display:flex;
-  align-items:center;
-  gap:10px;
+  display:flex; align-items:center; gap:10px;
   padding:10px 12px;
   border-radius: 999px;
   border:1px solid rgba(234,242,238,.12);
@@ -397,7 +393,7 @@ a{ color:inherit; }
   box-shadow: 0 18px 70px rgba(0,0,0,.40);
 }
 
-/* Section shell */
+/* Sections */
 .section{ padding:72px 0; }
 .section--alt{
   background: linear-gradient(180deg, rgba(234,242,238,.03), rgba(234,242,238,.01));
@@ -530,39 +526,6 @@ a{ color:inherit; }
 .stat-num{ font-family: var(--serif); font-size:22px; }
 .stat-label{ margin-top:4px; color: rgba(234,242,238,.72); font-size:12px; }
 
-/* Feature cards (if present) */
-.services-grid{
-  margin-top:18px;
-  display:grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap:14px;
-}
-.feature-card{
-  border-radius: var(--r2);
-  border:1px solid rgba(234,242,238,.10);
-  background: rgba(234,242,238,.03);
-  padding:18px 16px;
-  box-shadow: 0 14px 50px rgba(0,0,0,.20);
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-}
-.feature-card:hover{
-  transform: translateY(-4px);
-  background: rgba(234,242,238,.06);
-  box-shadow: 0 28px 90px rgba(0,0,0,.28);
-}
-.feature-icon{
-  width:36px; height:36px;
-  display:grid; place-items:center;
-  border-radius:14px;
-  margin-bottom:10px;
-  border:1px solid rgba(234,242,238,.12);
-  background: rgba(234,242,238,.04);
-  transition: transform .18s ease, background .18s ease;
-}
-.feature-card:hover .feature-icon{ transform: translateY(-2px) rotate(-2deg); background: rgba(63,224,127,.10); }
-.feature-card h3{ margin:0 0 8px; font-size:16px; }
-.feature-card p{ margin:0; color: rgba(234,242,238,.74); line-height:1.55; }
-
 /* Pricing */
 .pricing-grid{
   display:grid;
@@ -599,37 +562,13 @@ a{ color:inherit; }
   color:#06110c;
   background: linear-gradient(135deg, rgba(143,255,213,.95), rgba(63,224,127,.92), rgba(210,155,107,.90));
 }
-.price-top h3{ margin:0 0 6px; font-size:18px; }
-.price-top p{ margin:0; color: rgba(234,242,238,.74); line-height:1.5; }
 .price{
   font-family: var(--serif);
   font-size:40px;
   letter-spacing:.2px;
 }
-.price-sub{ margin-top:-6px; color: rgba(234,242,238,.70); font-size: 13px; }
 
-/* Areas (if present) */
-.areas-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap:14px;
-}
-.areas-card{
-  border-radius: var(--r2);
-  border:1px solid rgba(234,242,238,.10);
-  background: rgba(234,242,238,.03);
-  padding:18px 16px;
-  box-shadow: 0 18px 60px rgba(0,0,0,.16);
-  display:grid;
-  gap:10px;
-}
-.areas-card--accent{
-  border-color: rgba(210,155,107,.22);
-  background: linear-gradient(180deg, rgba(210,155,107,.12), rgba(234,242,238,.02));
-}
-.areas-list{ margin:0; padding-left:18px; color: rgba(234,242,238,.76); line-height:1.7; }
-
-/* Testimonials slider */
+/* Slider */
 .slider{
   border-radius: var(--r2);
   border:1px solid rgba(234,242,238,.10);
@@ -772,11 +711,18 @@ a{ color:inherit; }
   gap:14px;
   flex-wrap:wrap;
 }
+
+/* ✅ Footer wordmark fix */
 .footer-wordmark{
-  height: clamp(28px, 3vw, 34px);
+  height: clamp(28px, 3vw, 36px);
   width:auto;
-  opacity:.90;
-  filter: saturate(1.06) contrast(1.06) brightness(1.04) drop-shadow(0 18px 26px rgba(0,0,0,.26));
+  max-width: 260px;
+
+  transform: scale(1.18);
+  transform-origin: left center;
+
+  opacity:.92;
+  filter: saturate(1.06) contrast(1.06) brightness(1.05) drop-shadow(0 18px 26px rgba(0,0,0,.26));
   mix-blend-mode: screen;
 }
 @supports not (mix-blend-mode: screen){
@@ -845,47 +791,26 @@ a{ color:inherit; }
   .section-head{ grid-template-columns: 1fr; }
 
   .tab-panel{ grid-template-columns: 1fr; }
-  .services-grid{ grid-template-columns: 1fr 1fr; }
   .pricing-grid{ grid-template-columns: 1fr; }
-  .areas-grid{ grid-template-columns: 1fr; }
   .cta-grid{ grid-template-columns: 1fr; }
 
-  .hero-wordmark{ max-height: 120px; opacity:.78; }
-  .hero-watermark{ width: 420px; right:-180px; top:-60px; opacity:.02; }
+  .hero-wordmark{
+    max-height: 120px;
+    transform: scale(1.12);
+    opacity:.78;
+  }
+  .hero-watermark{ width: 420px; right:-180px; top:-60px; opacity:.018; }
 }
 
 @media (max-width: 520px){
-  .services-grid{ grid-template-columns: 1fr; }
   .hero-metrics{ grid-template-columns: 1fr; }
   .hero-title{ max-width: 100%; }
+  .brand-wordmark{ transform: scale(1.18); }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce){
   html{ scroll-behavior:auto; }
   .reveal{ transition:none; transform:none; opacity:1; }
-  .btn, .nav-link, .feature-card, .price-card, .masonry-item img, .tab-image-frame img,
-  .brand-wordmark, .hero-wordmark, .footer-wordmark, .dot-btn, .icon-btn { transition:none; }
-}/* --- Logo squish fix (header + hero) --- */
-.brand-wordmark,
-.hero-wordmark,
-.footer-wordmark{
-  width: auto !important;
-  height: auto !important;
-  max-width: 100%;
-  object-fit: contain !important; /* never crop */
-}
-
-/* Header: keep it crisp and not tiny */
-.brand-wordmark{
-  height: clamp(34px, 3.2vw, 52px) !important;
-  width: auto !important;
-}
-
-/* Hero: make it feel like a premium wordmark (bigger, not squished) */
-.hero-wordmark{
-  max-height: clamp(90px, 10vw, 160px) !important;
-  width: min(560px, 100%) !important;
-  height: auto !important;
-  opacity: .86;
+  .btn, .nav-link, .tab-btn, .brand-wordmark, .hero-wordmark, .footer-wordmark, .icon-btn, .dot-btn { transition:none; }
 }
