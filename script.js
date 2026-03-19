@@ -1,12 +1,11 @@
+// script.js — local assets + interactions
 (() => {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // ✅ Update once, applies everywhere
+  // Update once, applies everywhere
   const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSdmXHlMex9SUUpQITVMjZeb9j-Y8ChOg0WTPqafue_t11FhrQ/viewform";
 
-  // ✅ Local assets (NO URLs) — assumes images are in repo root
   const ASSETS = {
-    logo: "./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png",
     img1: "./IMG_0022.jpeg",
     img2: "./IMG_0023.jpeg",
     img3: "./IMG_0024.jpeg",
@@ -63,7 +62,7 @@
     });
   });
 
-  // Active nav link on scroll + reveal
+  // Active nav link + reveal
   const sectionIds = ["services", "work", "pricing", "areas", "reviews", "faq", "contact"];
   const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
   const linkById = new Map(sectionIds.map((id) => [id, document.querySelector(`.nav-link[href="#${id}"]`)]));
@@ -101,7 +100,7 @@
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("is-visible"));
   }
 
-  // Services tabs (copy + image) — uses local assets
+  // Services tabs (copy + image)
   const tabButtons = Array.from(document.querySelectorAll(".tab-btn"));
   const tabTitle = document.querySelector("[data-tab-title]");
   const tabCopy = document.querySelector("[data-tab-copy]");
