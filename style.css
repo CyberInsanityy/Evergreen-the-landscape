@@ -866,4 +866,26 @@ a{ color:inherit; }
   .reveal{ transition:none; transform:none; opacity:1; }
   .btn, .nav-link, .feature-card, .price-card, .masonry-item img, .tab-image-frame img,
   .brand-wordmark, .hero-wordmark, .footer-wordmark, .dot-btn, .icon-btn { transition:none; }
+}/* --- Logo squish fix (header + hero) --- */
+.brand-wordmark,
+.hero-wordmark,
+.footer-wordmark{
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  object-fit: contain !important; /* never crop */
+}
+
+/* Header: keep it crisp and not tiny */
+.brand-wordmark{
+  height: clamp(34px, 3.2vw, 52px) !important;
+  width: auto !important;
+}
+
+/* Hero: make it feel like a premium wordmark (bigger, not squished) */
+.hero-wordmark{
+  max-height: clamp(90px, 10vw, 160px) !important;
+  width: min(560px, 100%) !important;
+  height: auto !important;
+  opacity: .86;
 }
