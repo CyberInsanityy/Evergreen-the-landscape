@@ -1,256 +1,500 @@
-/* style.css — premium + FIXED wordmark via crop mask */
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Evergreen Edge Lawn Care | Premium Mowing, Edging & Cleanup</title>
+  <meta name="description" content="Premium mowing, edging, trimming, and seasonal cleanups. Licensed & insured. Fast estimates. Book in under a minute." />
 
-:root{
-  --bg:#06110c; --bg2:#0a1711;
-  --text:#eaf2ee; --muted:#b7c8bf;
-  --mint:#8fffd5; --leaf:#3fe07f; --copper:#d29b6b; --sand:#e7d7b1;
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500,700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  --shadow: 0 22px 80px rgba(0,0,0,.30);
-  --shadow2: 0 14px 50px rgba(0,0,0,.22);
+  <link rel="icon" type="image/png" href="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-  --r: 18px; --r2: 28px;
-  --serif: "Fraunces", ui-serif, Georgia, serif;
-  --sans: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-  --max: 1160px;
-}
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <h1 class="sr-only">Evergreen Edge Lawn Care</h1>
 
-*{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
-body{
-  margin:0;
-  font-family: var(--sans);
-  color: var(--text);
-  background:
-    radial-gradient(1100px 650px at 14% 8%, rgba(63,224,127,.16), transparent 60%),
-    radial-gradient(900px 520px at 92% 16%, rgba(143,255,213,.12), transparent 55%),
-    radial-gradient(900px 520px at 90% 85%, rgba(210,155,107,.10), transparent 55%),
-    linear-gradient(180deg, var(--bg), var(--bg2));
-  overflow-x:hidden;
-}
-img{ max-width:100%; display:block; }
-.container{ width:min(var(--max), calc(100% - 40px)); margin:0 auto; }
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Evergreen Edge home">
+        <span class="wordmark-mask wordmark-mask--header">
+          <img class="wordmark-img" src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="Evergreen Edge">
+        </span>
+      </a>
 
-.sr-only{ position:absolute!important; width:1px; height:1px; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
-.skip-link{ position:absolute; left:-999px; top:0; padding:12px 14px; background:var(--sand); color:#0b1712; border-radius:12px; z-index:9999; }
-.skip-link:focus{ left:14px; top:14px; }
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav-toggle-bars" aria-hidden="true"></span>
+        </button>
 
-/* Header */
-.site-header{
-  position:sticky; top:0; z-index:2000;
-  backdrop-filter: blur(14px);
-  background: rgba(6,17,12,.62);
-  border-bottom:1px solid rgba(234,242,238,.10);
-}
-.header-inner{ display:flex; align-items:center; justify-content:space-between; gap:18px; padding:14px 0; }
-.header-glow{
-  height:1px;
-  background: linear-gradient(90deg, transparent, rgba(63,224,127,.55), rgba(143,255,213,.55), rgba(210,155,107,.45), transparent);
-  opacity:.75;
-}
+        <div class="nav-menu" id="navMenu">
+          <a class="nav-link" href="#services">Services</a>
+          <a class="nav-link" href="#work">Work</a>
+          <a class="nav-link" href="#pricing">Pricing</a>
+          <a class="nav-link" href="#areas">Areas</a>
+          <a class="nav-link" href="#reviews">Reviews</a>
+          <a class="nav-link" href="#faq">FAQ</a>
+          <a class="nav-link" href="#contact">Book</a>
+        </div>
+      </nav>
 
-/* ✅ Wordmark crop/mask (fixes padded square PNG) */
-.wordmark-mask{
-  display:inline-block;
-  overflow:hidden;
-  line-height:0;
-  border-radius: 14px;
-  /* subtle plate so it feels designed-in */
-  background: rgba(234,242,238,.03);
-  border: 1px solid rgba(234,242,238,.10);
-  box-shadow: 0 18px 60px rgba(0,0,0,.18);
-}
+      <div class="header-cta">
+        <a class="btn btn-ghost js-form-link" href="#" aria-label="Get estimate via form">Get Estimate</a>
+        <a class="btn btn-primary js-form-link" href="#" aria-label="Book quote via form">
+          Book Quote <span class="btn-shine" aria-hidden="true"></span>
+        </a>
+      </div>
+    </div>
+    <div class="header-glow" aria-hidden="true"></div>
+  </header>
 
-/* Sizes per placement */
-.wordmark-mask--header{
-  height: 46px;
-  width: 210px;
-  padding: 6px 10px;
-}
-.wordmark-mask--hero{
-  height: 150px;
-  width: min(600px, 100%);
-  padding: 10px 14px;
-  border-radius: 22px;
-}
-.wordmark-mask--footer{
-  height: 38px;
-  width: 240px;
-  padding: 6px 10px;
-}
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero-watermark" aria-hidden="true">
+        <img src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="">
+      </div>
 
-/* Zoom into the padded PNG */
-.wordmark-img{
-  height: 100%;
-  width: auto;
-  object-fit: contain;
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <span class="wordmark-mask wordmark-mask--hero">
+            <img class="wordmark-img" src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="Evergreen Edge">
+          </span>
 
-  /* tweak this number if you want even bigger wordmark */
-  transform: scale(1.62) translateY(2%);
-  transform-origin: left center;
+          <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Licensed & insured • 24–48h response</p>
 
-  opacity: .96;
-  filter: saturate(1.08) contrast(1.08) brightness(1.06)
-          drop-shadow(0 18px 26px rgba(0,0,0,.28));
-  mix-blend-mode: screen;
-}
-@supports not (mix-blend-mode: screen){
-  .wordmark-img{ mix-blend-mode: normal; }
-}
+          <h2 class="hero-title">
+            A lawn that looks finished — not “just cut.”
+            <span class="hero-title-accent">Edges, trims, and a spotless clean exit.</span>
+          </h2>
 
-.brand{ display:flex; align-items:center; text-decoration:none; }
-.brand:hover .wordmark-img{ transform: scale(1.70) translateY(2%); }
+          <p class="hero-subtitle">
+            Premium mowing with consistent height, razor edging, tight trimming, and a final blow-off so your property looks professionally maintained.
+          </p>
 
-/* Nav */
-.nav{ display:flex; align-items:center; gap:12px; }
-.nav-menu{ display:flex; align-items:center; gap:16px; }
-.nav-link{
-  color: var(--muted);
-  text-decoration:none;
-  font-weight:600;
-  font-size:14px;
-  padding:10px 10px;
-  border-radius:12px;
-  transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
-}
-.nav-link:hover{ color: var(--text); background: rgba(234,242,238,.06); transform: translateY(-1px); }
-.nav-link.is-active{ color: var(--text); background: rgba(63,224,127,.14); box-shadow: 0 0 0 1px rgba(63,224,127,.22) inset; }
-.header-cta{ display:flex; gap:10px; }
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg js-form-link" href="#">
+              Request a Quote <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#services">See Services</a>
+          </div>
 
-/* Buttons */
-.btn{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  padding:12px 14px;
-  border-radius: 14px;
-  border:1px solid rgba(234,242,238,.14);
-  text-decoration:none;
-  font-weight:800;
-  letter-spacing:.2px;
-  user-select:none;
-  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
-}
-.btn:active{ transform: translateY(1px) scale(.99); }
-.btn-primary{
-  color:#06110c;
-  background: linear-gradient(135deg, rgba(143,255,213,.98), rgba(63,224,127,.92), rgba(210,155,107,.86));
-  box-shadow: 0 26px 80px rgba(63,224,127,.12), 0 18px 70px rgba(143,255,213,.10);
-}
-.btn-primary:hover{ transform: translateY(-1px); box-shadow: 0 34px 110px rgba(63,224,127,.16), 0 30px 110px rgba(143,255,213,.14); }
-.btn-ghost{ color: var(--text); background: rgba(234,242,238,.06); }
-.btn-ghost:hover{ transform: translateY(-1px); background: rgba(234,242,238,.09); box-shadow: 0 14px 40px rgba(0,0,0,.25); }
-.btn-lg{ padding:14px 18px; border-radius:16px; }
+          <div class="trust-row" role="list" aria-label="Trust signals">
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">★</span><strong>4.9</strong> avg rating</div>
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">🛡</span><strong>Licensed</strong> & insured</div>
+            <div class="trust-pill" role="listitem"><span aria-hidden="true">⏱</span><strong>24–48h</strong> response</div>
+          </div>
 
-.btn-shine{
-  position:absolute; inset:-1px; border-radius: inherit;
-  background: radial-gradient(220px 120px at 20% 20%, rgba(255,255,255,.40), transparent 55%);
-  opacity:.28; pointer-events:none;
-}
+          <div class="hero-metrics" aria-label="Key metrics">
+            <div class="metric"><div class="metric-num">10+</div><div class="metric-label">Years on routes</div></div>
+            <div class="metric"><div class="metric-num">350+</div><div class="metric-label">Lawns maintained</div></div>
+            <div class="metric"><div class="metric-num">0</div><div class="metric-label">Mess left behind</div></div>
+          </div>
+        </div>
 
-/* Hamburger */
-.nav-toggle{
-  display:none;
-  width:44px;height:44px;
-  border-radius:14px;
-  border:1px solid rgba(234,242,238,.14);
-  background: rgba(234,242,238,.06);
-  cursor:pointer;
-}
-.nav-toggle-bars{ width:18px; height:2px; background: var(--text); display:block; margin:0 auto; position:relative; }
-.nav-toggle-bars::before, .nav-toggle-bars::after{ content:""; position:absolute; left:0; width:18px; height:2px; background: var(--text); }
-.nav-toggle-bars::before{ top:-6px; } .nav-toggle-bars::after{ top:6px; }
+        <div class="hero-media reveal">
+          <div class="media-stack" aria-label="Lawn care photography">
+            <figure class="media-card media-card--a">
+              <img src="./IMG_0022.jpeg" alt="Lawn mowing service" loading="eager" />
+              <figcaption>Clean mowing lines</figcaption>
+            </figure>
+            <figure class="media-card media-card--b">
+              <img src="./IMG_0023.jpeg" alt="Detail trimming service" loading="lazy" />
+              <figcaption>Detail finish</figcaption>
+            </figure>
+            <figure class="media-card media-card--c">
+              <img src="./IMG_0024.jpeg" alt="Professional mower cutting grass" loading="lazy" />
+              <figcaption>Pro equipment</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
 
-/* Hero */
-.hero{ position:relative; padding:64px 0 34px; overflow:hidden; }
-.hero::before{
-  content:"";
-  position:absolute; inset:-40px;
-  background:
-    radial-gradient(900px 520px at 20% 20%, rgba(63,224,127,.14), transparent 60%),
-    radial-gradient(900px 520px at 85% 25%, rgba(143,255,213,.10), transparent 60%),
-    radial-gradient(1000px 620px at 80% 95%, rgba(210,155,107,.08), transparent 62%);
-  pointer-events:none;
-}
-.hero-watermark{
-  position:absolute; right:-220px; top:-40px;
-  width: 680px; opacity:.02; transform: rotate(10deg);
-  filter: blur(.45px); pointer-events:none;
-}
+      <div class="hero-bottom container reveal">
+        <div class="value-strip" aria-label="Value proposition highlights">
+          <div class="value-item"><h3>Sharper edges</h3><p>Hard lines finished clean—walks, drives, curbs.</p></div>
+          <div class="value-item"><h3>Spotless blow-off</h3><p>No clippings on concrete. Clean exit every visit.</p></div>
+          <div class="value-item"><h3>Fast estimates</h3><p>Most quotes returned within 24–48 hours.</p></div>
+        </div>
+      </div>
 
-.hero-grid{ display:grid; grid-template-columns: 1.05fr .95fr; gap:34px; align-items:center; position:relative; z-index:1; }
+      <div class="hero-noise" aria-hidden="true"></div>
+    </section>
 
-.eyebrow{ display:flex; align-items:center; gap:10px; color:var(--muted); letter-spacing:.14em; text-transform:uppercase; font-size:12px; margin: 10px 0; }
-.dot{ width:10px; height:10px; border-radius:999px; background: radial-gradient(circle at 30% 30%, rgba(143,255,213,.95), rgba(63,224,127,.82)); box-shadow: 0 0 0 6px rgba(63,224,127,.08); }
-.hero-title{ margin:0 0 10px; font-family:var(--serif); font-size: clamp(30px, 3.2vw, 44px); line-height:1.06; max-width:24ch; }
-.hero-title-accent{ display:block; color:var(--sand); }
-.hero-subtitle{ margin:0 0 18px; max-width:58ch; color: rgba(234,242,238,.82); line-height:1.65; }
-.hero-actions{ display:flex; flex-wrap:wrap; gap:12px; margin: 12px 0 16px; }
+    <!-- SERVICES -->
+    <section class="section" id="services" aria-label="Services">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Services</h2>
+          <p class="section-lede">Tap a service—details and photo update instantly.</p>
+        </div>
 
-.trust-row{ display:flex; flex-wrap:wrap; gap:10px; margin: 10px 0 18px; }
-.trust-pill{ padding:10px 12px; border-radius:999px; border:1px solid rgba(234,242,238,.12); background: rgba(234,242,238,.05); box-shadow: 0 10px 30px rgba(0,0,0,.18); }
+        <div class="services-wrap reveal">
+          <div class="tabs" role="tablist" aria-label="Services tabs">
+            <button class="tab-btn is-active" role="tab" aria-selected="true" aria-controls="tabPanel" data-tab="mow">Mow + Edge</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabPanel" data-tab="trim">Trim + Detail</button>
+            <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tabPanel" data-tab="cleanup">Cleanups</button>
+          </div>
 
-.hero-metrics{ display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:10px; }
-.metric{ padding:14px; border-radius:var(--r); border:1px solid rgba(234,242,238,.10); background: rgba(234,242,238,.04); box-shadow: 0 18px 60px rgba(0,0,0,.14); }
-.metric-num{ font-family:var(--serif); font-size:28px; }
-.metric-label{ margin-top:6px; color: rgba(234,242,238,.72); font-size:13px; }
+          <div class="tab-panel" id="tabPanel" role="tabpanel" tabindex="0" aria-live="polite">
+            <div class="tab-content">
+              <h3 class="tab-title" data-tab-title>Mow + Edge</h3>
+              <p class="tab-copy" data-tab-copy>Premium mowing with crisp edging and a clean blow-off—built for curb appeal.</p>
 
-/* Media stack */
-.media-stack{ position:relative; min-height:520px; }
-.media-card{ position:absolute; border-radius:var(--r2); overflow:hidden; border:1px solid rgba(234,242,238,.14); box-shadow: var(--shadow); }
-.media-card img{ width:100%; height:100%; object-fit:cover; }
-.media-card figcaption{ position:absolute; left:14px; bottom:12px; padding:10px 12px; border-radius:999px; font-size:12px; background: rgba(6,17,12,.60); border:1px solid rgba(234,242,238,.12); }
-.media-card--a{ inset: 0 10% 20% 0; }
-.media-card--b{ inset: 42% 0 0 28%; transform: rotate(2deg); }
-.media-card--c{ inset: 18% 34% 48% 4%; transform: rotate(-2deg); box-shadow: 0 18px 70px rgba(0,0,0,.40); }
+              <ul class="checklist" data-tab-list>
+                <li>Even mow height + clean passes</li>
+                <li>Edges on sidewalks/driveways/curbs</li>
+                <li>Trim around obstacles</li>
+                <li>Final blow-off (clean exit)</li>
+              </ul>
 
-/* Footer */
-.footer{ padding: 28px 0; border-top: 1px solid rgba(234,242,238,.08); background: rgba(6,17,12,.60); }
-.footer-inner{ display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; }
-.footer-bottom{ margin-top:12px; color: rgba(234,242,238,.56); font-size:13px; }
+              <div class="tab-cta">
+                <a class="btn btn-primary js-form-link" href="#">
+                  Book a Quote <span class="btn-shine" aria-hidden="true"></span>
+                </a>
+                <div class="mini-proof" aria-label="Mini proof">
+                  <span class="mini-pill">Clean exit</span>
+                  <span class="mini-pill">Licensed</span>
+                  <span class="mini-pill">Fast response</span>
+                </div>
+              </div>
+            </div>
 
-/* Back to top */
-.back-to-top{
-  position:fixed; right:18px; bottom:18px;
-  width:48px; height:48px; border-radius:18px;
-  border:1px solid rgba(234,242,238,.14);
-  background: rgba(6,17,12,.60);
-  color:var(--text); cursor:pointer;
-  box-shadow: 0 20px 70px rgba(0,0,0,.28);
-  opacity:0; transform: translateY(10px); pointer-events:none;
-  transition: opacity .2s ease, transform .2s ease;
-}
-.back-to-top.is-visible{ opacity:1; transform: translateY(0); pointer-events:auto; }
+            <div class="tab-media">
+              <div class="tab-image-frame">
+                <img data-tab-image src="./IMG_0022.jpeg" alt="Service image" loading="lazy" />
+                <div class="tab-image-overlay" aria-hidden="true"></div>
+              </div>
 
-/* Reveal */
-.reveal{ opacity:0; transform: translateY(14px); transition: opacity .7s ease, transform .7s ease; }
-.reveal.is-visible{ opacity:1; transform: translateY(0); }
+              <div class="tab-stats" aria-label="Service stats">
+                <div class="stat"><div class="stat-num">48h</div><div class="stat-label">estimate goal</div></div>
+                <div class="stat"><div class="stat-num">✓</div><div class="stat-label">checklist</div></div>
+                <div class="stat"><div class="stat-num">🧹</div><div class="stat-label">blow-off</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-/* Responsive */
-@media (max-width: 980px){
-  .header-cta{ display:none; }
-  .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
-  .nav-menu{
-    position:absolute; right:20px; top:72px;
-    width: min(360px, calc(100vw - 40px));
-    display:grid; gap:6px; padding:12px;
-    border-radius:22px;
-    border:1px solid rgba(234,242,238,.12);
-    background: rgba(6,17,12,.86);
-    box-shadow: var(--shadow);
-    transform: scale(.98); opacity:0; pointer-events:none;
-    transition: opacity .18s ease, transform .18s ease;
-  }
-  .nav-menu.is-open{ opacity:1; transform: scale(1); pointer-events:auto; }
-  .hero-grid{ grid-template-columns: 1fr; }
-  .media-stack{ min-height:460px; }
+        <div class="services-grid reveal" aria-label="Service highlights">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Clean lines</h3>
+            <p>Consistent cut height + straight passes that read “pro” instantly.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Edges that pop</h3>
+            <p>Hard edges are curb appeal. We treat them like the main event.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Detail trimming</h3>
+            <p>Fence lines, corners, obstacles—tight and clean finishing work.</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">⟡</div>
+            <h3>Cleanups</h3>
+            <p>Seasonal resets for leaf pickup, debris, and a fresh look.</p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  .wordmark-mask--hero{ height: 120px; }
-  .wordmark-img{ transform: scale(1.60) translateY(2%); }
-}
+    <!-- WORK -->
+    <section class="section section--alt" id="work" aria-label="Work gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Work</h2>
+          <p class="section-lede">A quick look at the finish standard.</p>
+        </div>
 
-@media (prefers-reduced-motion: reduce){
-  html{ scroll-behavior:auto; }
-  .reveal{ transition:none; transform:none; opacity:1; }
-}
+        <div class="masonry reveal" aria-label="Gallery grid">
+          <figure class="masonry-item">
+            <img src="./IMG_0024.jpeg" alt="Close-up mower cutting grass" loading="lazy" />
+            <figcaption>Fresh cut finish</figcaption>
+          </figure>
+
+          <figure class="masonry-item masonry-item--tall">
+            <img src="./IMG_0022.jpeg" alt="Mowing service on a yard" loading="lazy" />
+            <figcaption>Clean lines</figcaption>
+          </figure>
+
+          <figure class="masonry-item">
+            <img src="./IMG_0023.jpeg" alt="Detail trimming and lawn service" loading="lazy" />
+            <figcaption>Detail finish</figcaption>
+          </figure>
+
+          <div class="proof-card">
+            <h3>Finish checklist</h3>
+            <ul class="checklist">
+              <li>Even mow height</li>
+              <li>Edges on hard lines</li>
+              <li>Trim around obstacles</li>
+              <li>Blow-off + clean exit</li>
+            </ul>
+            <a class="btn btn-ghost js-form-link" href="#" aria-label="Book via form">Book a Quote</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="pricing" aria-label="Pricing">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Pricing</h2>
+          <p class="section-lede">One-time visits. Final price depends on lot size and access.</p>
+        </div>
+
+        <div class="pricing-grid reveal" aria-label="Pricing plans">
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Starter Cut</h3>
+              <p>Clean baseline service for smaller lawns.</p>
+            </div>
+            <div class="price">$129</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow + trim pass</li>
+              <li>Edge hard lines</li>
+              <li>Blow-off surfaces</li>
+              <li>Quick detail check</li>
+            </ul>
+            <a class="btn btn-ghost full js-form-link" href="#" data-plan="Starter Cut">Select Starter</a>
+          </article>
+
+          <article class="price-card price-card--featured">
+            <div class="price-badge" aria-hidden="true">Best Value</div>
+            <div class="price-top">
+              <h3>Signature Edge</h3>
+              <p>Full detail finish: lines, edging, trimming, blow-off.</p>
+            </div>
+            <div class="price">$199</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow with clean lines</li>
+              <li>Full edging (walk/drive/curb)</li>
+              <li>Detail trimming</li>
+              <li>Full blow-off + tidy finish</li>
+            </ul>
+            <a class="btn btn-primary full js-form-link" href="#" data-plan="Signature Edge">
+              Select Signature <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+          </article>
+
+          <article class="price-card">
+            <div class="price-top">
+              <h3>Commercial Clean</h3>
+              <p>For storefronts/offices that need a sharp first impression.</p>
+            </div>
+            <div class="price">$299</div>
+            <div class="price-sub">One-time visit</div>
+            <ul class="checklist">
+              <li>Mow + trim perimeter</li>
+              <li>Edge entry lines</li>
+              <li>Blow-off lots/walks</li>
+              <li>Optional photo check-in</li>
+            </ul>
+            <a class="btn btn-ghost full js-form-link" href="#" data-plan="Commercial Clean">Select Commercial</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AREAS -->
+    <section class="section" id="areas" aria-label="Service areas">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Service Areas</h2>
+          <p class="section-lede">Routes across the metro. If you’re nearby, we’ll confirm quickly.</p>
+        </div>
+
+        <div class="areas-grid reveal">
+          <div class="areas-card">
+            <h3>Primary zones</h3>
+            <ul class="areas-list">
+              <li>Northside neighborhoods</li>
+              <li>Downtown / midtown corridors</li>
+              <li>West-end residential</li>
+              <li>South lake / park districts</li>
+            </ul>
+          </div>
+
+          <div class="areas-card">
+            <h3>Nearby cities</h3>
+            <ul class="areas-list">
+              <li>Riverview</li>
+              <li>Oak Hollow</li>
+              <li>Stonebridge</li>
+              <li>Maple Heights</li>
+            </ul>
+          </div>
+
+          <div class="areas-card areas-card--accent">
+            <h3>Not sure?</h3>
+            <p>Send your address and we’ll confirm availability and timing.</p>
+            <a class="btn btn-primary js-form-link" href="#">
+              Check Availability <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section section--alt" id="reviews" aria-label="Testimonials">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">Reviews</h2>
+          <p class="section-lede">What people notice first: the edges and the clean exit.</p>
+        </div>
+
+        <div class="slider reveal" aria-label="Testimonials slider">
+          <div class="slider-track" id="testimonialTrack" aria-live="polite">
+            <article class="testimonial is-active">
+              <p class="quote">“The edging is the difference. Sidewalks look brand new and they never leave clippings behind.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">A</span>
+                <div><div class="name">Alyssa M.</div><div class="meta">Homeowner</div></div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="quote">“Lines are straight, trimming is tight, and the blow-off is spotless. Looks expensive.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">J</span>
+                <div><div class="name">Jordan K.</div><div class="meta">Homeowner</div></div>
+              </div>
+            </article>
+
+            <article class="testimonial">
+              <p class="quote">“Storefront looked sharp the same day. Entry clean, no mess left behind.”</p>
+              <div class="who">
+                <span class="avatar" aria-hidden="true">S</span>
+                <div><div class="name">S. Patel</div><div class="meta">Commercial</div></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="slider-controls">
+            <button class="icon-btn" type="button" id="testPrev" aria-label="Previous testimonial">←</button>
+            <div class="dots" role="tablist" aria-label="Testimonial dots">
+              <button class="dot-btn is-active" type="button" aria-label="Go to testimonial 1" data-index="0"></button>
+              <button class="dot-btn" type="button" aria-label="Go to testimonial 2" data-index="1"></button>
+              <button class="dot-btn" type="button" aria-label="Go to testimonial 3" data-index="2"></button>
+            </div>
+            <button class="icon-btn" type="button" id="testNext" aria-label="Next testimonial">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" aria-label="Frequently asked questions">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 class="section-title">FAQ</h2>
+          <p class="section-lede">Clear answers. No surprises.</p>
+        </div>
+
+        <div class="faq reveal" role="list">
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              Do you offer weekly/biweekly service?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Yes. Request it on the form and we’ll confirm route availability.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              What does “clean exit” mean?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>We blow off sidewalks, driveways, patios, and curb edges so clippings aren’t left on concrete.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              How fast do you send estimates?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Most estimates are returned within 24–48 hours depending on route volume and scope.</div>
+          </div>
+
+          <div class="faq-item" role="listitem">
+            <button class="faq-q" type="button" aria-expanded="false">
+              Are you licensed and insured?
+              <span class="faq-icon" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-a" hidden>Yes—licensed and insured, with careful site practices on every property.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact" aria-label="Book lawn care quote">
+      <div class="container cta-grid reveal">
+        <div class="cta-card">
+          <h2 class="cta-title">Ready for a lawn that looks finished?</h2>
+          <p class="cta-copy">Book in under a minute. We’ll confirm scope and timing—then send a clear estimate.</p>
+
+          <div class="cta-actions">
+            <a class="btn btn-primary btn-lg js-form-link" href="#">
+              Book Now <span class="btn-shine" aria-hidden="true"></span>
+            </a>
+            <a class="btn btn-ghost btn-lg" href="#pricing">View Pricing</a>
+          </div>
+        </div>
+
+        <aside class="cta-aside" aria-label="Quick facts">
+          <div class="aside-card">
+            <h3>What happens next</h3>
+            <ol class="steps">
+              <li>Submit the form (address + needs)</li>
+              <li>We confirm timing + scope</li>
+              <li>You get estimate + schedule options</li>
+            </ol>
+          </div>
+
+          <div class="aside-card aside-card--dark">
+            <h3>Included in every visit</h3>
+            <ul class="checklist">
+              <li>Edging on hard lines</li>
+              <li>Detail trimming</li>
+              <li>Full blow-off + tidy finish</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" aria-label="Footer">
+      <div class="container footer-inner">
+        <span class="wordmark-mask wordmark-mask--footer">
+          <img class="wordmark-img" src="./977773C6-6CE2-4EC3-A534-CD3DF4ACFB9A.png" alt="Evergreen Edge">
+        </span>
+
+        <a class="btn btn-primary js-form-link" href="#">
+          Book Quote <span class="btn-shine" aria-hidden="true"></span>
+        </a>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>© <span id="year"></span> Evergreen Edge Lawn Care. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <button class="back-to-top" type="button" aria-label="Back to top" id="backToTop">↑</button>
+  </main>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
